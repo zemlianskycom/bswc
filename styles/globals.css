@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+    color: var(--white)
+}
+
+@layer components {
+    .abs-c {
+        @apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
+    }
+}
+
+:root {
+    --white: #fff;
+    --black: #000;
+    --primary: #30503A;
+    --secondary: #503030;
+}
+

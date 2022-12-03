@@ -1,19 +1,38 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
+import Link from 'next/link'
+import Footer from '../components/Footer'
 import Hero from '../components/Hero'
+import HeroMin from '../components/HeroMin'
+import League from '../icons/League'
 
 const Home: NextPage = () => {
   return (
     <div className="flex justify-center w-[100vw] h-[100vh] ">
       <Head>
-        <title>1</title>
+        <title>BSWC - 18</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
+      <main className="relative py-8">
+        <div className="flex flex-col justify-between h-[stretch]">
+          {/* up */}
+          <div className=" flex flex-col gap-2 items-center ">
+            <span>2018</span>
+            <HeroMin />
+          </div>
+          {/* down */}
+          <div className="flex flex-col gap-8 items-center">
+            <div className="origin-bottom">
+              <League />
+            </div>
+            <span>Main frames</span>
+          </div>
+        </div>
         <Hero />
-        <h1 className="abs-c z-[1]">Championship</h1>
+        {/* title promo */}
+        <h1 className="abs-c">Championship</h1>
       </main>
-      <footer className="flex"></footer>
+      <Footer />
     </div>
   )
 }

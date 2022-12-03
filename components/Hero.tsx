@@ -1,26 +1,27 @@
 import { useEffect, useState } from 'react'
 import { v4 as uuidv4 } from 'uuid'
+import { transitionDelay } from '../styles/global'
 
-const SliderData = [
+const heroData = [
   {
     id: uuidv4(),
     img:
-      'https://images.unsplash.com/photo-1560790043-256df1604bea?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80',
+      'https://images.unsplash.com/photo-1556056504-5c7696c4c28d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1952&q=80',
   },
   {
     id: uuidv4(),
     img:
-      'https://images.unsplash.com/photo-1650797885394-a67b8d535f56?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80',
+      'https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80',
   },
   {
     id: uuidv4(),
     img:
-      'https://images.unsplash.com/photo-1555993539-1732b0258235?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80',
+      'https://images.unsplash.com/photo-1506626637585-0802df0d0269?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3270&q=80',
   },
   {
     id: uuidv4(),
     img:
-      'https://images.unsplash.com/photo-1470115636492-6d2b56f9146d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80',
+      'https://images.unsplash.com/photo-1556764420-e37ef4cdfa5c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80',
   },
 ]
 
@@ -29,28 +30,30 @@ function Hero() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      if (slideIndex === SliderData.length) {
+      if (slideIndex === heroData.length) {
         setSlideIndex(1)
       } else {
         setSlideIndex(slideIndex + 1)
       }
-    }, 5000)
+    }, transitionDelay)
     return () => clearInterval(interval)
   }, [slideIndex])
 
   return (
-    <div className="w-[100vw]">
-      {SliderData.map((obj, index) => {
+    <div className="abs-c w-[100vw] top-0 z-[-1]">
+      {heroData.map((obj, index) => {
         return (
           <div
             className={
               slideIndex === index + 1
-                ? 'absolute opacity-1 transition duration-700 z-[1]'
-                : 'absolute opacity-0 transition duration-700'
+                ? 'absolute opacity-1 transition-[var(--anim)] z-[1]'
+                : 'absolute opacity-0 transition-[var(--anim)]'
             }
             key={obj.id}
           >
-            <div className="absolute w-[100%] h-[100%] bg-[var(--primary)] opacity-95" />
+            {/* shadow */}
+            <div className="absolute w-[100%] h-[100%] opacity-70 bg-black from-sky-700" />
+            {/* img */}
             <img
               src={obj.img}
               alt="cover"

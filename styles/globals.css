@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --white: #fff;
+    --black: #000;
+    --primary: #30503A;
+    --secondary: #503030;
+	--anim: all 300ms cubic-bezier(1,-0.01,0,.99); 
+}
+
 * {
     color: var(--white)
 }
@@ -12,10 +20,14 @@
     }
 }
 
-:root {
-    --white: #fff;
-    --black: #000;
-    --primary: #30503A;
-    --secondary: #503030;
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
-

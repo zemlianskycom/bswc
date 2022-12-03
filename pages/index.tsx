@@ -11,7 +11,7 @@ const Home: NextPage = () => {
       </Head>
       <main>
         <Hero />
-        <h1 className="abs-c">Championship</h1>
+        <h1 className="abs-c z-[1]">Championship</h1>
       </main>
       <footer className="flex"></footer>
     </div>

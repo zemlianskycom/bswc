@@ -7,7 +7,7 @@
     --black: #000;
     --primary: #30503A;
     --secondary: #503030;
-	--anim: all 300ms cubic-bezier(1,-0.01,0,.99); 
+	--anim: cubic-bezier(1,-0.01,0,.99); 
 }
 
 * {

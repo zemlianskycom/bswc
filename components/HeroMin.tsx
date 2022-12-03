@@ -6,7 +6,7 @@ const heroMinData = [
   {
     id: uuidv4(),
     img:
-      'https://images.unsplash.com/photo-1633434541715-a0dc2d694fb0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=927&q=80',
+      'https://e3.365dm.com/22/12/1600x900/skynews-germany-fans-world-cup_5984409.jpg?20221202091926',
     country: 'Barcelona',
   },
   {
@@ -51,14 +51,15 @@ function HeroMin() {
           <div
             className={
               slideIndex === index + 1
-                ? 'absolute opacity-1 transition-[var(--anim)] z-[1]'
-                : 'absolute opacity-0 transition-[var(--anim)]'
+                ? 'absolute opacity-1 transition-[var(--anim)] duration-500 z-[1]'
+                : 'absolute opacity-0 transition-[var(--anim)] duration-500'
             }
             key={obj.id}
           >
             <div className="relative overflow-hidden gap-1 flex flex-col">
               {/* img */}
               <p>{obj.country}</p>
+
               <img
                 src={obj.img}
                 alt="country-cover"

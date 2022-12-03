@@ -1,4 +1,4 @@
 // slider
-const transitionDelay = 5000
+const transitionDelay = 3000
 
 export { transitionDelay }

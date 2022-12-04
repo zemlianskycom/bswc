@@ -1,7 +1,7 @@
 function TwoX() {
   return (
     <svg
-      width="100vw"
+      width="14vw"
       height="auto"
       viewBox="0 0 700 151"
       fill="none"

@@ -6,7 +6,7 @@ function Footer() {
       <Link href="http://zemliansky.com">
         <h6 className="">Zemliansky</h6>
       </Link>
-      <h6>2022</h6>
+      <h6>©2022</h6>
     </footer>
   )
 }

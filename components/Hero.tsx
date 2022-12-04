@@ -6,25 +6,25 @@ const heroData = [
   {
     id: uuidv4(),
     img:
-      'https://images.unsplash.com/photo-1556056504-5c7696c4c28d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1952&q=80',
+      'https://images.unsplash.com/photo-1544012607-649ef9fedc21?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2372&q=80',
     bg: 'primary',
   },
   {
     id: uuidv4(),
     img:
-      'https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80',
+      'https://images.unsplash.com/photo-1645956162922-7caf2bf54eec?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80',
     bg: 'secondary',
   },
   {
     id: uuidv4(),
     img:
-      'https://images.unsplash.com/photo-1506626637585-0802df0d0269?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3270&q=80',
+      'https://images.unsplash.com/photo-1637203727700-9d86c74904d6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80',
     bg: 'primary',
   },
   {
     id: uuidv4(),
     img:
-      'https://images.unsplash.com/photo-1556764420-e37ef4cdfa5c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80',
+      'https://images.unsplash.com/photo-1632300951015-42d7df909581?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3425&q=80',
     bg: 'secondary',
   },
 ]
@@ -44,26 +44,33 @@ function Hero() {
   }, [slideIndex])
 
   return (
-    <div className="abs-c w-[100vw] top-0 z-[-1] bg-black">
+    <div className="abs-c w-[100vw] top-0 z-[-1]">
       {heroData.map((obj, index) => {
         return (
           <div
             className={
               slideIndex === index + 1
-                ? 'absolute opacity-1 transition-[var(--anim)] duration-500 z-[1]'
-                : 'absolute opacity-0 transition-[var(--anim)] duration-500'
+                ? 'w-[100vw] absolute opacity-1 transition-[var(--anim)] z-[1] scale-125 duration-700'
+                : 'w-[100vw] absolute opacity-0 transition-[var(--anim)] duration-700'
             }
             key={obj.id}
           >
             {/* shadow */}
-            <div className="z-[1] absolute w-[100%] h-[100%] opacity-30 bg-black brightness-125" />
+            <div
+              className="z-[1] absolute w-[100vw] h-[100vh] opacity-70 bg-black"
+              style={{
+                animation: 'flash linear 40s infinite',
+              }}
+            />
             {/* img */}
             <img
+              style={{
+                animation: 'zoom linear 40s infinite',
+              }}
               src={obj.img}
               alt="cover"
-              className="w-[100vw] h-[100vh] object-cover bg-center bg-cover opacity-50"
+              className="h-[100vh] w-[100vw] object-cover"
             />
-            <div className="z-[-1] absolute top-0 w-[100vw] h-[100vh] bg-black" />
           </div>
         )
       })}

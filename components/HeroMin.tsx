@@ -6,20 +6,20 @@ const heroMinData = [
   {
     id: uuidv4(),
     img:
-      'https://e3.365dm.com/22/12/1600x900/skynews-germany-fans-world-cup_5984409.jpg?20221202091926',
-    country: 'Barcelona',
+      'https://images.unsplash.com/photo-1527871369852-eb58cb2b54e2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3431&q=80',
+    country: 'Spain, Barcelona',
   },
   {
     id: uuidv4(),
     img:
-      'https://images.unsplash.com/photo-1524748969064-cf3dabd7b84d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2150&q=80',
-    country: 'Norway',
+      'https://images.unsplash.com/photo-1531752148124-118ba196fc7b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80',
+    country: 'USA, Norway',
   },
   {
     id: uuidv4(),
     img:
       'https://www.fcbarcelona.com/fcbarcelona/photo/2022/10/23/95c05ed8-7b4a-4563-87ea-9085f9621385/VIC_1659.jpg',
-    country: 'Sinegal',
+    country: 'Paris, Sinegal',
   },
   {
     id: uuidv4(),
@@ -62,8 +62,8 @@ function HeroMin() {
                 <p
                   className={
                     slideIndex === index + 1
-                      ? 'duration-1000'
-                      : 'translate-y-[3em] duration-1000 transition-[var(--anim)]'
+                      ? 'duration-700'
+                      : 'translate-y-[3em] duration-700 transition-[var(--anim)]'
                   }
                 >
                   {obj.country}
@@ -73,7 +73,7 @@ function HeroMin() {
               <img
                 src={obj.img}
                 alt="country-cover"
-                className="object-cover w-[100vw] h-[100vh]"
+                className="w-[100vw] bg-center bg-cover object-cover"
               />
             </div>
           </div>

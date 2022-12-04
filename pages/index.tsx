@@ -6,6 +6,9 @@ import HeroMin from '../components/HeroMin'
 import LineRunner from '../components/LineRunner'
 import League from '../icons/League'
 
+import { motion } from 'framer-motion'
+import { anim } from '../styles/global'
+
 const Home: NextPage = () => {
   return (
     <div className="flex justify-center w-[100vw] h-[100vh] overflow-hidden">
@@ -14,6 +17,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="relative py-8">
+        {/* content */}
         <div className="flex flex-col justify-between h-[stretch]">
           {/* up */}
           <div className=" flex flex-col gap-0 items-center ">
@@ -22,7 +26,7 @@ const Home: NextPage = () => {
           </div>
           {/* down */}
           <div className="flex flex-col gap-8 items-center">
-            <div className="origin-bottom">
+            <div className="">
               <League />
             </div>
             <span>Main frames</span>

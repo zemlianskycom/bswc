@@ -56,9 +56,19 @@ function HeroMin() {
             }
             key={obj.id}
           >
-            <div className="relative overflow-hidden gap-1 flex flex-col">
+            <div className="relative overflow-hidden gap-2 flex flex-col">
               {/* img */}
-              <p>{obj.country}</p>
+              <div className="overflow-hidden">
+                <p
+                  className={
+                    slideIndex === index + 1
+                      ? 'duration-1000'
+                      : 'translate-y-[3em] duration-1000 transition-[var(--anim)]'
+                  }
+                >
+                  {obj.country}
+                </p>
+              </div>
 
               <img
                 src={obj.img}

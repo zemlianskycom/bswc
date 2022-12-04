@@ -31,6 +31,7 @@ const heroMinData = [
 
 function HeroMin() {
   const [slideIndex, setSlideIndex] = useState(1)
+  const [hover, setHover] = useState(false)
 
   // per 5 sec
   useEffect(() => {
@@ -49,32 +50,52 @@ function HeroMin() {
       {heroMinData.map((obj, index) => {
         return (
           <div
-            className={
+            style={
               slideIndex === index + 1
-                ? 'absolute opacity-1 transition-[var(--anim)] duration-500 z-[1]'
-                : 'absolute opacity-0 transition-[var(--anim)] duration-500'
+                ? { opacity: 1, zIndex: 1 }
+                : { opacity: 0 }
             }
+            className="absolute transition-[var(--anim)] duration-500"
             key={obj.id}
           >
-            <div className="relative overflow-hidden gap-2 flex flex-col">
-              {/* img */}
-              <div className="overflow-hidden">
+            <div
+              onMouseEnter={() => {
+                setHover(true)
+              }}
+              onMouseLeave={() => {
+                setHover(false)
+              }}
+              className="cursor-pointer relative overflow-hidden gap-2 flex flex-col"
+            >
+              {/* locate */}
+              <div className="overflow-hidden origin-right">
                 <p
+                  style={
+                    hover
+                      ? {
+                          opacity: 1,
+                          transform: 'scale(1.05)',
+                        }
+                      : {}
+                  }
                   className={
                     slideIndex === index + 1
-                      ? 'duration-700'
-                      : 'translate-y-[3em] duration-700 transition-[var(--anim)]'
+                      ? 'origin-top-left duration-700'
+                      : 'origin-top-left translate-y-[3em] duration-700 transition-[var(--anim)]'
                   }
                 >
                   {obj.country}
                 </p>
               </div>
-
-              <img
-                src={obj.img}
-                alt="country-cover"
-                className="w-[100vw] bg-center bg-cover object-cover"
-              />
+              {/* img */}
+              <div className="overflow-hidden">
+                <img
+                  src={obj.img}
+                  alt="country-cover"
+                  style={hover ? { transform: 'scale(1.1)' } : {}}
+                  className="w-[100vw] bg-center bg-cover object-cover transition-[var(--anim)] duration-300"
+                />
+              </div>
             </div>
           </div>
         )

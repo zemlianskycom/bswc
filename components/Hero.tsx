@@ -56,12 +56,7 @@ function Hero() {
             key={obj.id}
           >
             {/* shadow */}
-            <div
-              className="z-[1] absolute w-[100vw] h-[100vh] opacity-70 bg-black"
-              style={{
-                animation: 'flash linear 40s infinite',
-              }}
-            />
+            <div className="z-[1] absolute w-[100vw] h-[100vh] opacity-70 bg-black" />
             {/* img */}
             <img
               style={{

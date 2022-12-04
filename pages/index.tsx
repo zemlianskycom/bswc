@@ -8,6 +8,7 @@ import League from '../icons/League'
 
 import { motion } from 'framer-motion'
 import { anim } from '../styles/global'
+import Burger from '../icons/Burger'
 
 const Home: NextPage = () => {
   return (
@@ -16,7 +17,12 @@ const Home: NextPage = () => {
         <title>BSWC - 18</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="relative py-8">
+      <div className="absolute flex w-full py-7 justify-end px-6">
+        <div className="cursor-pointer opacity-75 hover:opacity-100 hover:scale-110 duration-300 transition-[var(--anim)]">
+          <Burger />
+        </div>
+      </div>
+      <main className="relative py-6">
         {/* content */}
         <div className="flex flex-col justify-between h-[stretch]">
           {/* up */}
@@ -26,7 +32,7 @@ const Home: NextPage = () => {
           </div>
           {/* down */}
           <div className="flex flex-col gap-8 items-center">
-            <div className="">
+            <div className="opacity-50 origin-top-left">
               <League />
             </div>
             <span>Main frames</span>

@@ -1,9 +1,7 @@
 import { useState } from 'react'
 import Burger from '../icons/Burger'
 
-function Navigate() {
-  const [open, setOpen] = useState(true)
-
+function Navigate({ open, setOpen }: { open: any; setOpen: any }) {
   return (
     <>
       <div

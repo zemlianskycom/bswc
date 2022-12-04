@@ -10,8 +10,12 @@ import { motion } from 'framer-motion'
 import { anim } from '../styles/global'
 import Burger from '../icons/Burger'
 import Navigate from '../components/Navigate'
+import { useState } from 'react'
+import Championship from '../icons/Championship'
 
 const Home: NextPage = () => {
+  const [open, setOpen] = useState(true)
+
   return (
     <div className="flex justify-center w-[100vw] h-[100vh] overflow-hidden">
       <Head>
@@ -19,15 +23,14 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="absolute flex w-full py-7 justify-end px-6">
-        <Navigate />
+        <Navigate open={open} setOpen={setOpen} />
       </div>
       {/* video */}
       <div className="absolute top-0 w-[stretch] h-[stretch] mix-blend-lighten">
         <video autoPlay loop muted playsInline>
-          <source src="/video/sparks.mp4" type="video/mp4" />
+          <source src="/video/sparks2.mp4" type="video/mp4" />
         </video>
       </div>
-
       <main className="relative py-6">
         {/* content */}
         <div className="flex flex-col justify-between h-[stretch]">
@@ -46,7 +49,11 @@ const Home: NextPage = () => {
         </div>
         <Hero />
         {/* title promo */}
-        <h1 className="abs-c">Championship</h1>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+          <div className="scale-75">
+            <Championship />
+          </div>
+        </div>
         <LineRunner />
       </main>
       <Footer />

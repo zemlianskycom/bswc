@@ -5,7 +5,7 @@ function League() {
       height="15vh"
       viewBox="0 0 300 300"
       fill="none"
-      className="origin-bottom"
+      className="origin-top-left"
       xmlns="http://www.w3.org/2000/svg"
     >
       <mask id="path-1-inside-1_116_230" fill="white">

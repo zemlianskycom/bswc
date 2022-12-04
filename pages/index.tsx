@@ -9,6 +9,7 @@ import League from '../icons/League'
 import { motion } from 'framer-motion'
 import { anim } from '../styles/global'
 import Burger from '../icons/Burger'
+import Navigate from '../components/Navigate'
 
 const Home: NextPage = () => {
   return (
@@ -18,10 +19,15 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="absolute flex w-full py-7 justify-end px-6">
-        <div className="cursor-pointer opacity-75 hover:opacity-100 hover:scale-110 duration-300 transition-[var(--anim)]">
-          <Burger />
-        </div>
+        <Navigate />
       </div>
+      {/* video */}
+      <div className="absolute top-0 w-[stretch] h-[stretch] mix-blend-lighten">
+        <video autoPlay loop muted playsInline>
+          <source src="/video/sparks.mp4" type="video/mp4" />
+        </video>
+      </div>
+
       <main className="relative py-6">
         {/* content */}
         <div className="flex flex-col justify-between h-[stretch]">

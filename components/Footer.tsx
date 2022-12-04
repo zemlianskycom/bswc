@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 function Footer() {
   return (
-    <footer className="absolute bottom-4 right-5 flex gap-2">
+    <footer className="z-[2] absolute bottom-4 right-5 flex gap-2">
       <Link href="http://zemliansky.com">
         <h6 className="hover:opacity-100 hover:scale-105 duration-300">
           Zemliansky

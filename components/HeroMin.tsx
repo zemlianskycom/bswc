@@ -59,6 +59,11 @@ function HeroMin() {
             key={obj.id}
           >
             <div
+              onClick={() => {
+                if (slideIndex === heroMinData.length) {
+                  setSlideIndex(1)
+                } else setSlideIndex(slideIndex + 1)
+              }}
               onMouseEnter={() => {
                 setHover(true)
               }}
@@ -92,8 +97,10 @@ function HeroMin() {
                 <img
                   src={obj.img}
                   alt="country-cover"
-                  style={hover ? { transform: 'scale(1.1)' } : {}}
-                  className="w-[100vw] bg-center bg-cover object-cover transition-[var(--anim)] duration-300"
+                  style={
+                    hover ? { transform: 'scale(1.1) translateY(-25%)' } : {}
+                  }
+                  className="-translate-y-1/4 w-[100vw] h-[100vh] object-center object-cover  transition-[var(--anim)] duration-300"
                 />
               </div>
             </div>

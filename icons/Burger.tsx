@@ -7,8 +7,8 @@ function Burger() {
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M28 0H0V1H28V0ZM28 7H0V8H28V7Z"
         fill="#ffffff"
       />

@@ -1,8 +1,7 @@
 function League() {
   return (
     <svg
-      width="15vw"
-      height="15vh"
+      width="7vw"
       viewBox="0 0 300 300"
       fill="none"
       className="origin-top-left"

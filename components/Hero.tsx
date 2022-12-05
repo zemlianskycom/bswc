@@ -7,25 +7,25 @@ const heroData = [
     id: uuidv4(),
     img:
       'https://images.unsplash.com/photo-1544012607-649ef9fedc21?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2372&q=80',
-    bg: 'primary',
+    sparks: '0',
   },
   {
     id: uuidv4(),
     img:
       'https://images.unsplash.com/photo-1645956162922-7caf2bf54eec?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80',
-    bg: 'secondary',
+    sparks: '180',
   },
   {
     id: uuidv4(),
     img:
       'https://images.unsplash.com/photo-1637203727700-9d86c74904d6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80',
-    bg: 'primary',
+    sparks: '30',
   },
   {
     id: uuidv4(),
     img:
       'https://images.unsplash.com/photo-1632300951015-42d7df909581?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3425&q=80',
-    bg: 'secondary',
+    sparks: '60',
   },
 ]
 
@@ -55,8 +55,21 @@ function Hero() {
             }
             key={obj.id}
           >
+            {/* video */}
+            <div
+              style={
+                slideIndex === index + 1
+                  ? { filter: `hue-rotate(${obj.sparks}deg)` }
+                  : {}
+              }
+              className="z-[0] absolute top-0 w-[stretch] h-[stretch] mix-blend-lighten transition-[var(--anim)] duration-300"
+            >
+              <video className="max-w-none" autoPlay loop muted playsInline>
+                <source src="/video/sparks2.mp4" type="video/mp4" />
+              </video>
+            </div>
             {/* shadow */}
-            <div className="z-[1] absolute w-[100vw] h-[100vh] opacity-70 bg-black" />
+            <div className="z-[1] absolute w-[100vw] h-[100vh] opacity-40 bg-black" />
             {/* img */}
             <img
               style={{
@@ -64,7 +77,7 @@ function Hero() {
               }}
               src={obj.img}
               alt="cover"
-              className="h-[100vh] w-[100vw] object-cover"
+              className="z-[3] h-[100vh] w-[100vw] object-cover opacity-50"
             />
           </div>
         )

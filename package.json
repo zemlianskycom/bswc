@@ -8,6 +8,7 @@
   "dependencies": {
     "@react-three/fiber": "^8.9.1",
     "framer-motion": "^7.6.18",
+    "gsap": "file:gsap-bonus.tgz",
     "next": "latest",
     "react": "18.2.0",
     "react-dom": "18.2.0",

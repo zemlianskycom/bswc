@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { v4 as uuidv4 } from 'uuid'
-import { transitionDelay } from '../styles/global'
+import { anim, transitionDelay } from '../styles/global'
+import { motion } from 'framer-motion'
 
 const heroMinData = [
   {
@@ -29,9 +30,8 @@ const heroMinData = [
   },
 ]
 
-function HeroMin() {
+function HeroMin({ hover, setHover }: { hover: any; setHover: any }) {
   const [slideIndex, setSlideIndex] = useState(1)
-  const [hover, setHover] = useState(false)
 
   // per 5 sec
   useEffect(() => {
@@ -46,24 +46,25 @@ function HeroMin() {
   }, [slideIndex])
 
   return (
-    <div className="md:max-w-[50vw] w-[90vw] h-[44vh] z-[0] overflow-hidden relative">
+    <motion.div
+      initial={{ width: 'auto', height: 'auto' }}
+      animate={{ width: '100vw', height: '45vh' }}
+      exit={{ width: 'auto', height: 'auto' }}
+      transition={anim}
+      className="md:max-w-[50vw] w-[90vw] h-[44vh] z-[0] overflow-hidden relative"
+    >
       {heroMinData.map((obj, index) => {
         return (
           <div
             style={
               slideIndex === index + 1
                 ? { opacity: 1, zIndex: 1 }
-                : { opacity: 0 }
+                : { opacity: 0, transform: 'scale(1.25)' }
             }
             className="absolute transition-[var(--anim)] duration-500"
             key={obj.id}
           >
             <div
-              onClick={() => {
-                if (slideIndex === heroMinData.length) {
-                  setSlideIndex(1)
-                } else setSlideIndex(slideIndex + 1)
-              }}
               onMouseEnter={() => {
                 setHover(true)
               }}
@@ -107,7 +108,7 @@ function HeroMin() {
           </div>
         )
       })}
-    </div>
+    </motion.div>
   )
 }
 

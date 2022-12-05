@@ -43,15 +43,6 @@ body {
 	}
 }
 
-@keyframes ticker {
-	0% { 
-		transform: translate3d(-50%, -50%, 0);
-	}
-	100% {
-		transform: translate3d(0, -50%, 0);
-	}
-}
-
 @keyframes zoom {
 	0% { 
 		transform: scale(1);

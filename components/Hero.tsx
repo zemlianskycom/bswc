@@ -62,10 +62,16 @@ function Hero() {
                   ? { filter: `hue-rotate(${obj.sparks}deg)` }
                   : {}
               }
-              className="z-[0] absolute top-0 w-[stretch] h-[stretch] mix-blend-lighten transition-[var(--anim)] duration-300"
+              className="z-[1] absolute top-0 mix-blend-lighten transition-[var(--anim)] duration-300"
             >
-              <video className="max-w-none" autoPlay loop muted playsInline>
-                <source src="/video/sparks2.mp4" type="video/mp4" />
+              <video
+                className="w-[stretch] h-[stretch]"
+                autoPlay
+                loop
+                muted
+                playsInline
+              >
+                <source src="/video/sparks4.mp4" type="video/mp4" />
               </video>
             </div>
             {/* shadow */}

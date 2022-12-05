@@ -1,5 +1,6 @@
 import TwoX from '../icons/TwoX'
-import function LineRunner({ open }: { open: any }) {
+
+function LineRunner({ open }: { open: any }) {
   return (
     <div
       style={

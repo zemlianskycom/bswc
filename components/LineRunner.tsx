@@ -1,4 +1,5 @@
 import TwoX from '../icons/TwoX'
+import { gsap } from 'gsap'
 
 function LineRunner({ open }: { open: any }) {
   return (
